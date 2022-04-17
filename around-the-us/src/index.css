@@ -4,6 +4,9 @@
 /*page*/
 @import url(./blocks/page/page.css);
 
+/*wrapper*/
+@import url(./blocks/wrapper/wrapper.css);
+
 /*header*/
 @import url(./blocks/header/header.css);
 
