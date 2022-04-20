@@ -8,6 +8,7 @@ function PopupWithForm(
         title,
         onClose,
         submitButton,
+        onSubmit,
         children,
     }
 ) {
@@ -15,13 +16,32 @@ function PopupWithForm(
     return (
         <section className={`popup popup_type_${name} ${isOpen ? "popup_visible" : ""}`}>
             <div className="popup__form-container">
-                <button className="popup__close-button popup__close-button_type_edit" type="button"
-                        onClick={onClose}><img className="popup__close-button-icon" src={addButton} alt="cross icon"/>
+                <button
+                    className="popup__close-button popup__close-button_type_edit"
+                    type="button"
+                    onClick={onClose}
+                >
+                    <img
+                        className="popup__close-button-icon"
+                        src={addButton}
+                        alt="cross icon"
+                    />
                 </button>
-                <form className={`popup__form popup__form-${name}`} action="#" name={`form-${name}`}>
+                <form
+                    className={`popup__form popup__form-${name}`}
+                    action="#"
+                    name={`form-${name}`}
+                    onSubmit={onSubmit}
+                >
                     <h2 className="popup__title">{title}</h2>
                     {children}
-                    <button className="popup__button" type="submit" aria-label="Save changes">{submitButton}</button>
+                    <button
+                        className="popup__button"
+                        type="submit"
+                        aria-label="Save changes"
+                    >
+                        {submitButton}
+                    </button>
                 </form>
             </div>
         </section>
